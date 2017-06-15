@@ -24,6 +24,10 @@
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Sky" translatesAutoresizingMaskIntoConstraints="NO" id="kqv-p9-GJE">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="vLa-Vv-CYD" appends="YES" id="Iib-MX-vFZ"/>
+                                </connections>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Sun" translatesAutoresizingMaskIntoConstraints="NO" id="pjC-NI-NqN">
                                 <rect key="frame" x="220" y="38" width="139" height="97"/>
@@ -38,10 +42,19 @@
                                     <constraint firstAttribute="height" constant="245" id="Q4k-KW-w15"/>
                                 </constraints>
                             </imageView>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c0E-BO-kRu">
+                                <rect key="frame" x="67.5" y="0.0" width="240" height="667"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="M6T-k3-Npc"/>
+                                </constraints>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="wSs-eS-JYu" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="3Kv-QK-b0S"/>
+                            <constraint firstItem="c0E-BO-kRu" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="9jy-Ae-so5"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="c0E-BO-kRu" secondAttribute="bottom" id="C9H-MX-GQ4"/>
+                            <constraint firstItem="c0E-BO-kRu" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="G7Y-F0-FCg"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="kqv-p9-GJE" secondAttribute="bottom" id="LUh-eh-GOq"/>
                             <constraint firstItem="kqv-p9-GJE" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Lg1-PP-cG9"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="wSs-eS-JYu" secondAttribute="bottom" id="S0L-V9-YNB"/>
@@ -52,8 +65,13 @@
                             <constraint firstItem="pjC-NI-NqN" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="18" id="zXB-4t-cyl"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="gestureRecognizer" destination="vLa-Vv-CYD" id="DmF-Gt-lNd"/>
+                        <outlet property="scrollView" destination="c0E-BO-kRu" id="sdW-uj-mgb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="vLa-Vv-CYD"/>
             </objects>
             <point key="canvasLocation" x="136.80000000000001" y="138.98050974512745"/>
         </scene>
